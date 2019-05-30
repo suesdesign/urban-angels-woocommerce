@@ -14,3 +14,5 @@ Excludes categories from showing.
 Changes 'in stock' and 'out of stock' to 'available' and 'sold out'
 
 Removes the description on the classes page.
+
+See the plugin in action at https://urbanangelscircus.com/book-classes/
