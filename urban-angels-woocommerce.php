@@ -18,18 +18,18 @@ Author URI: http://suesdesign.co.uk/
  */
 
 
-//* Change add to basket button text per category
+// Change add to basket button text per category
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'urbanangels_custom_cart_button_text' );
 function urbanangels_custom_cart_button_text() {
 	global $product;
 		if ( has_term( 'Classes', 'product_cat', $product->get_id() ) && $product->is_in_stock() ) {           
 		return 'Book now';
 	} else {
-		return 'Book now';
+		return 'Buy now';
 	}
 }
 
-//* Change add to basket button text per category archive pages
+// Change add to basket button text per category archive pages
 add_filter( 'woocommerce_product_add_to_cart_text', 'urbanangels_archive_custom_cart_button_text' );
 function urbanangels_archive_custom_cart_button_text() {
 	global $product;
@@ -38,7 +38,7 @@ function urbanangels_archive_custom_cart_button_text() {
 	} else if ( !$product->is_in_stock() ) {           
 		return 'Sold out';
 	} else {
-		return 'Book now';
+		return 'Buy now';
 	}
 }
 
@@ -88,12 +88,9 @@ if ( $product->is_in_stock() && $product->managing_stock() && get_option( 'wooco
 }
 
 /**
- * Remove description on classes page
- */
-
-/**
  * Remove product data tabs
  */
+
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 
 function woo_remove_product_tabs( $tabs ) {
